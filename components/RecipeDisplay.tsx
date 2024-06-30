@@ -18,6 +18,9 @@ export default function RecipeDisplay({ recipe }: { recipe: RecipeData | null })
             <Typography variant="h4" component="h1" gutterBottom>
                 {recipe.name}
             </Typography>
+            <Typography variant='body1' gutterBottom>
+                <a href={recipe.recipe.original_recipe_url} target="_blank" rel="noreferrer">Original Recipe Link ({recipe.recipe.original_recipe_url})</a>
+            </Typography>
             
             <Typography variant="body2" gutterBottom>
                 yeild: {recipe.recipe.servings} servings
