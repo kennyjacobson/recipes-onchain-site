@@ -40,6 +40,7 @@ export default function Home() {
           priority
         /> */}
         Recipes Onchain
+        (0x2843b40A3ac54044F94480417c2d3698Ebc94583)
       </div>
 {/* 
       <div className="mb-32 grid text-center lg:mb-0 lg:w-full lg:max-w-5xl lg:grid-cols-4 lg:text-left">
