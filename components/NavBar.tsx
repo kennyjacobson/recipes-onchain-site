@@ -7,34 +7,40 @@ import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
+import CssBaseline from '@mui/material/CssBaseline'; // Import CssBaseline
+
 
 const NavBar = () => {
-  return (
-    <AppBar position="static">
-      <Toolbar style={{ justifyContent: 'space-evenly' }}> {/* Adjusted for spacing */}
-        <div style={{ display: 'flex', alignItems: 'center' }}> {/* Container for the first link */}
-          <Link href="/" passHref>
-            <IconButton edge="start" color="inherit" aria-label="home">
-              <HomeIcon />
-              <Typography variant="h6" style={{ marginLeft: '10px' }}>
-                Home
-              </Typography>
-            </IconButton>
-          </Link>
-        </div>
-        <div style={{ display: 'flex', alignItems: 'center' }}> {/* Container for the second link */}
-          <Link href="/pages/recipe/list" passHref>
-            <IconButton color="inherit">
-              <MenuBookIcon />
-              <Typography variant="h6" style={{ marginLeft: '10px' }}>
-                Recipes
-              </Typography>
-            </IconButton>
-          </Link>
-        </div>
-      </Toolbar>
-    </AppBar>
-  );
-};
+    return (
+      <>
+        <CssBaseline /> {/* Add CssBaseline for consistent baseline CSS */}
+        <AppBar position="fixed"> {/* Change position to fixed */}
+          <Toolbar style={{ justifyContent: 'space-evenly' }}>
+            <div style={{ display: 'flex', alignItems: 'center' }}>
+              <Link href="/" passHref>
+                <IconButton edge="start" color="inherit" aria-label="home">
+                  <HomeIcon />
+                  <Typography variant="h6" style={{ marginLeft: '10px' }}>
+                    Home
+                  </Typography>
+                </IconButton>
+              </Link>
+            </div>
+            <div style={{ display: 'flex', alignItems: 'center' }}>
+              <Link href="/pages/recipe/list" passHref>
+                <IconButton color="inherit">
+                  <MenuBookIcon />
+                  <Typography variant="h6" style={{ marginLeft: '10px' }}>
+                    Recipes
+                  </Typography>
+                </IconButton>
+              </Link>
+            </div>
+          </Toolbar>
+        </AppBar>
+        <Toolbar /> {/* Add an empty Toolbar to offset the content below the AppBar */}
+      </>
+    );
+  };
 
 export default NavBar;

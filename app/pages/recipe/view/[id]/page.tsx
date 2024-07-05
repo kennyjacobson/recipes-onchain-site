@@ -1,8 +1,12 @@
 "use client"; // This file is a client-side file
-import { Container, Typography } from '@mui/material';
+import { Box } from '@mui/material';
 import { useEffect, useState } from 'react';
 import { RecipeData } from '../../../../../types/recipeTypes';
 import RecipeDisplay from '@/components/RecipeDisplay';
+
+
+
+
 
 export default function Recipe({ params: { id }, }: { params: { id: string }; }) {
     console.log("id", id);
@@ -22,9 +26,10 @@ export default function Recipe({ params: { id }, }: { params: { id: string }; })
     }, []);
 
 
+  
     return (
-        <Container>
+        <Box sx={{mt:2, mb:2}}>
             <RecipeDisplay recipe={recipe} />
-        </Container>
+        </Box>
     );
 }

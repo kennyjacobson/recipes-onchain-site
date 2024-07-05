@@ -1,15 +1,25 @@
 // a componet that takes in a recipe and displays it
 // the recipe structure is defined in types/recipeTypes.ts
 
-import { Container, Typography, Avatar, Divider } from '@mui/material';
+import { Container, Typography, Avatar, Divider, Skeleton, Stack } from '@mui/material';
 import { useEffect, useState } from 'react';
 import { RecipeData } from '../types/recipeTypes';
+
+const RecipeSkeleton = () => {
+    return (
+        <Stack spacing={2}>
+            <Skeleton variant="rectangular" height={200} />
+            <Skeleton variant="text" height={60} />
+            <Skeleton variant="text" height={60} />
+        </Stack>
+    );
+}
 
 export default function RecipeDisplay({ recipe }: { recipe: RecipeData | null }) {
     console.log("recipe", recipe);
 
 
-    if (!recipe) return <p>Loading...</p>;
+    if (!recipe) return <RecipeSkeleton />;
 
     return (
         <Container>
