@@ -1,17 +1,22 @@
 // a componet that takes in a recipe and displays it
 // the recipe structure is defined in types/recipeTypes.ts
 
-import { Container, Typography, Avatar, Divider, Skeleton, Stack } from '@mui/material';
+import { Container, Typography, Avatar, Box, Divider, Skeleton, Stack } from '@mui/material';
 import { useEffect, useState } from 'react';
 import { RecipeData } from '../types/recipeTypes';
 
 const RecipeSkeleton = () => {
+
     return (
-        <Stack spacing={2}>
-            <Skeleton variant="rectangular" height={200} />
-            <Skeleton variant="text" height={60} />
-            <Skeleton variant="text" height={60} />
-        </Stack>
+        <Container > 
+            <Box > 
+                <Stack spacing={1}>
+                    <Skeleton animation="wave" variant="circular" sx={{ height: 100, width: 100, backgroundColor: 'grey.200' }} />
+                    <Skeleton animation="wave" variant="rectangular" sx={{ height: 200, backgroundColor: 'grey.200' }} />
+                    <Skeleton animation="wave" variant="rounded" sx={{ height: 200, backgroundColor: 'grey.200' }} />
+                </Stack>
+            </Box>
+        </Container>
     );
 }
 
@@ -24,14 +29,14 @@ export default function RecipeDisplay({ recipe }: { recipe: RecipeData | null })
     return (
         <Container>
             {/* <img style={{height:}} src={recipe.image} alt={recipe.name} /> */}
-            <Avatar sx={{height:100, width:100}}  src={recipe.image} alt={recipe.name} />
+            <Avatar sx={{ height: 100, width: 100 }} src={recipe.image} alt={recipe.name} />
             <Typography variant="h4" component="h1" gutterBottom>
                 {recipe.name}
             </Typography>
             <Typography variant='body1' gutterBottom>
                 <a href={recipe.recipe.original_recipe_url} target="_blank" rel="noreferrer">Original Recipe Link ({recipe.recipe.original_recipe_url})</a>
             </Typography>
-            
+
             <Typography variant="body2" gutterBottom>
                 yeild: {recipe.recipe.servings} servings
             </Typography>
@@ -48,8 +53,8 @@ export default function RecipeDisplay({ recipe }: { recipe: RecipeData | null })
                 {recipe.description}
             </Typography>
             {/* Display other recipe details here */}
-            <Divider sx={{mt:2, border: 1}} />
-            <Typography sx={{mt:2}} variant="h6" gutterBottom>
+            <Divider sx={{ mt: 2, border: 1 }} />
+            <Typography sx={{ mt: 2 }} variant="h6" gutterBottom>
                 Ingredients
             </Typography>
             <ul>
@@ -59,7 +64,7 @@ export default function RecipeDisplay({ recipe }: { recipe: RecipeData | null })
                     </li>
                 ))}
             </ul>
-            <Typography sx={{mt:2}} variant="h6" gutterBottom>
+            <Typography sx={{ mt: 2 }} variant="h6" gutterBottom>
                 Instructions
             </Typography>
             <ol>
@@ -67,11 +72,11 @@ export default function RecipeDisplay({ recipe }: { recipe: RecipeData | null })
                     <li key={index}>
                         {instruction}
                     </li>
-                ))} 
+                ))}
             </ol>
-            <Divider sx={{mt:2, border: 1}} />
+            <Divider sx={{ mt: 2, border: 1 }} />
 
-            <Typography sx={{mt:2}} variant="h6" gutterBottom>
+            <Typography sx={{ mt: 2 }} variant="h6" gutterBottom>
                 Nutrition Facts
             </Typography>
             <ul>

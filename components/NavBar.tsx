@@ -7,13 +7,13 @@ import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
-import CssBaseline from '@mui/material/CssBaseline'; // Import CssBaseline
+
 
 
 const NavBar = () => {
     return (
       <>
-        <CssBaseline /> {/* Add CssBaseline for consistent baseline CSS */}
+
         <AppBar position="fixed"> {/* Change position to fixed */}
           <Toolbar style={{ justifyContent: 'space-evenly' }}>
             <div style={{ display: 'flex', alignItems: 'center' }}>
