@@ -8,7 +8,7 @@ export default function RecipeListDisplay({ maxNftCount }: { maxNftCount: number
     <>
       <Grid container spacing={2}>
         {nftList.map((id) => (
-          <Grid item xs={2} key={id}>
+          <Grid item xs={12} sm={6} md={4} lg={3} xl={2} key={id}>
             <RecipeMiniDisplay id={id.toString()} />
           </Grid>
         ))}
