@@ -7,7 +7,7 @@ const MAX_NFT_COUNT = 17; // this will eventually be dynamic. A call to the nft 
 export default function RecipeList() {
   return (
     <>
-      <h1>Recipe List</h1>
+
       <RecipeListDisplay maxNftCount={MAX_NFT_COUNT} />
 
      
